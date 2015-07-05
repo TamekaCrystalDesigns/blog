@@ -1,0 +1,26 @@
+<h1>Add New Post</h1>
+<%= form_for @user do |f| %>
+	<div>
+		<%= f.label :fname %>
+		<%= f.text_field :fname %>
+	</div>
+	<div>
+		<%= f.label :lname %>
+		<%= f.text_field :lname %>
+	</div>
+	<div>
+		<%= f.label :email %>
+		<%= f.text_field :email %>
+	</div>
+	<hr />
+	<%= fields_for @post do |p| %>
+		<div>
+			<%= p.label :body %>
+			<%= p.text_area :body, size: "60X12" %>
+		</div>
+	<% end %>
+	<div>
+		<%= f.submit %>
+	</div>
+
+<% end %>
